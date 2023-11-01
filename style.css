@@ -1,174 +1,109 @@
-* { font-family: 'Montserrat'; }
-.no-pad { padding: 0; }
-.m-b-0 { margin-bottom: 0; }
-.main {
-  min-height: 100vh;
-  height: 100%;
-  background: #222;
-}
-.people {
-  height: 100vh;
-  background: #323232;
-  border-right: 3px solid #656565;
-  overflow-y: hidden;
-}
-.user {
-  display: table;
-  width: 100%;
-  height: 100px;
-}
-.user-item {
-  display: table-cell;
-  height: inherit;
-  padding-left: 15px;
-  padding-right: 15px;
-  vertical-align: middle;
-}
-.user-item img { border-radius: 50%; }
-.user-item p.name { 
-  margin: 0;
-  padding-left: 15px;
-  font-size: 20px;
-  color: #f1f1f1; 
-}
-.user-item p.active { 
-  margin: 0;
-  padding-left: 15px;
-  font-size: 10px;
-  color: #f1f1f1; 
-}
-.list-head {
-  padding: 5px;
-  background: #3d3d3d;
-}
-.list-head p {
-  margin: 0;
-  text-align: center;
-  font-size: 16px;
-  color: #f1f1f1;
-}
-.list-item {
-  display: table;
-  width: 100%;
-  height: 50px;
-  padding: 10px;
-  border-left: 4px solid transparent;
-}
-.list-item img {
-  display: table-cell;
-  height: 40px;
-  border-radius: 50%;
-  vertical-align: middle;
-}
-.list-item p {
-  display: table-cell;
-  height: 40px;
-  margin: 0;
-  padding-left: 15px;
-  padding-top: 10px;
-  font-size: 14px;
-  color: #f1f1f1;
-  vertical-align: middle;
-}
-.list-item.active,
-.list-item:hover {
-  border-left: 4px solid #444;
-}
-.list-item.active {
-  background: #353535;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+
+:root {
+	--primary-color: #3a4052;
 }
 
-.chat-wrapper {
-  display: flex;
-  height: 90vh;
-  padding: 10px;
-  flex-direction: column-reverse;
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
-.chat-content {
-  display: table-cell;
-  width: 100%;
-  margin-top: 20px;
-  vertical-align: bottom;
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	line-height: 1.5;
 }
-.chat-content p {
-  color: #656565;
+
+a {
+	text-decoration: none;
+	color: var(--primary-color);
 }
-.chat-bubble {
-  display: inline-block;
-  padding: 5px 10px;
-  background: #323232;
-  border-radius: .25em;
+
+h1 {
+	font-weight: 300;
+	font-size: 60px;
+	line-height: 1.2;
+	margin-bottom: 15px;
 }
-.left {
-	position: relative;
-	background: #323232;
+
+.showcase {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	color: #fff;
+	padding: 0 20px;
 }
-.left:after {
-	right: 100%;
-	bottom: 50%;
-	border: solid transparent;
-	content: " ";
-	height: 0;
-	width: 0;
+
+.video-container {
 	position: absolute;
-	pointer-events: none;
-	border-right-color: #323232;
-	border-width: 5px;
-	margin-top: -5px;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background: var(--primary-color) url('./https://traversymedia.com/downloads/cover.jpg') no-repeat center
+		center/cover;
 }
-.right {
-	position: relative;
-	background: #323232;
-}
-.right:after {
-	left: 100%;
+
+.video-container video {
+	min-width: 100%;
+	min-height: 100%;
+  position: absolute;
 	top: 50%;
-	border: solid transparent;
-	content: " ";
-	height: 0;
-	width: 0;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	object-fit: cover;
+}
+
+.video-container:after {
+	content: '';
+	z-index: 1;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.5);
 	position: absolute;
-	pointer-events: none;
-	border-left-color: #323232;
-	border-width: 5px;
-	margin-top: -5px;
 }
-.form-control {
-  background-color: #444;
-  border: none;
+
+.content {
+	z-index: 2;
 }
-.chat-input {
-  float: left;
-  width: calc(100% - 60px);
+
+.btn {
+	display: inline-block;
+	padding: 10px 30px;
+	background: var(--primary-color);
+	color: #fff;
+	border-radius: 5px;
+	border: solid #fff 1px;
+	margin-top: 25px;
+	opacity: 0.7;
 }
-.chat-img {
-  width: 30px;
-  height: 30px;
-  margin-left: 1em;
+
+.btn:hover {
+	transform: scale(0.98);
 }
-.chat-img-left {
-  width: 30px;
-  height: 30px;
-  margin-right: 1em;
+
+#about {
+	padding: 40px;
+	text-align: center;
 }
-.chat-info {
-  padding-top: 20px;
-  background-color: #2d2d2d;
+
+#about p {
+	font-size: 1.2rem;
+	max-width: 600px;
+	margin: auto;
 }
-.chat-info p {
-  color: #f1f1f7;
+
+#about h2 {
+	margin: 30px 0;
+	color: var(--primary-color);
 }
-.chat-info-box {
-  border-top: 2px solid #3d3d3d;
-}
-.chat-info-item {
-  padding: 10px;
-  border-bottom: 2px solid #3d3d3d;
-}
-.shared-photos {
-  padding: 10px;
-}
-.shared-photos img {
-  border-radius: .25em;
-  border: 1px solid #656565;
+
+.social a {
+	margin: 0 5px;
 }
